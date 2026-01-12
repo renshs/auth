@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Auth</title>
+</head>
+<body>
+  <h1>Вход</h1>
+
+  <form method="POST" action="/login">
+    <div>
+      <label>Логин</label>
+      <input name="username" type="text" required />
+    </div>
+
+    <div>
+      <label>Пароль</label>
+      <input name="password" type="password" required />
+    </div>
+
+    <button type="submit">Войти</button>
+    <button type="reset">Сброс</button>
+  </form>
+
+  <p id="result"></p>
+</body>
+</html>

@@ -1,3 +1,8 @@
+/**
+ * @file src/app.ts
+ * @brief HTTP server and authentication workflow.
+ */
+
 import express, { Request, Response } from "express";
 import path from "path";
 import bcrypt from "bcrypt";

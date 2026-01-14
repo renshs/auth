@@ -7,21 +7,26 @@
 <body>
   <h1>Вход</h1>
 
-  <form method="POST" action="/login">
+  <form id="loginForm" autocomplete="off" method="post" action="/login">
     <div>
       <label>Логин</label>
-      <input name="username" type="text" required />
+      <input id="username" name="username" type="text" required />
     </div>
 
     <div>
       <label>Пароль</label>
-      <input name="password" type="password" required />
+      <input id="password" name="password" type="password" required />
     </div>
 
     <button type="submit">Войти</button>
-    <button type="reset">Сброс</button>
+    <button type="reset" id="resetBtn">Сброс</button>
   </form>
 
-  <p id="result"></p>
+  <p id="result">Введите логин и пароль.</p>
+
+  <p><a href="/register">Создать пользователя</a></p>
+
+
+  <script src="/app.js"></script>
 </body>
 </html>

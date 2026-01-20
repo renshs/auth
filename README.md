@@ -19,8 +19,7 @@ sudo apt install -y nodejs npm build-essential python3 doxygen
 - `src/` - TypeScript source code
 - `build/` - build output (generated)
 - `data/` - SQLite database file
-- `index.html`, `app.js` - login UI
-- `register.html`, `register.js` - registration UI
+- `ui/` - login and registration UI assets
 
 ## Build
 Install dependencies once:

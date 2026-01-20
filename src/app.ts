@@ -87,19 +87,19 @@ async function initDb(): Promise<void> {
 
 // --- UI files ---
 app.get("/", (_req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, "..", "index.html"));
+    res.sendFile(path.join(__dirname, "ui", "index.html"));
 });
 
 app.get("/app.js", (_req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, "..", "app.js"));
+    res.sendFile(path.join(__dirname, "ui", "app.js"));
 });
 
 app.get("/register", (_req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, "..", "register.html"));
+    res.sendFile(path.join(__dirname, "ui", "register.html"));
 });
 
 app.get("/register.js", (_req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, "..", "register.js"));
+    res.sendFile(path.join(__dirname, "ui", "register.js"));
 });
 
 /**

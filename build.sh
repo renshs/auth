@@ -23,5 +23,17 @@ else
 fi
 
 mkdir -p "$BUILD_DIR"
-npx tsc --project "$ROOT_DIR/tsconfig.json" --outDir "$BUILD_DIR" "${TS_FLAGS[@]}"
+if [ ! -x "$ROOT_DIR/node_modules/.bin/tsc" ]; then
+  echo "ERROR: deps not installed. Run: npm install"
+  exit 1
+fi
+if [ ! -d "$ROOT_DIR/ui" ]; then
+  echo "ERROR: UI directory not found: $ROOT_DIR/ui"
+  exit 1
+fi
+
+"$ROOT_DIR/node_modules/.bin/tsc" --project "$ROOT_DIR/tsconfig.json" --outDir "$BUILD_DIR" "${TS_FLAGS[@]}"
+mkdir -p "$BUILD_DIR/ui"
+cp -f "$ROOT_DIR/ui/index.html" "$ROOT_DIR/ui/app.js" "$ROOT_DIR/ui/register.html" "$ROOT_DIR/ui/register.js" "$BUILD_DIR/ui/"
+
 echo "Build complete: $BUILD_DIR"
